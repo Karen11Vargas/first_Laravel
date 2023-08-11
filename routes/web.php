@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MyFirstController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/', 'welcome');
+
+//Se ha declado una ruta, se ira al controlador y la funcion exacta
+Route::get('/example', [MyFirstController::class, 'index']);
 
 // Route::get('/{cadena}', function ($cadena) {
 
