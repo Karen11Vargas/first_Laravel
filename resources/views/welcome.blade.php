@@ -13,7 +13,7 @@
     <title> {{env('APP_NAME')}}</title>
    </head>
    <body>
-    <a href="{{route ('getContacto')}}">Hola</a>
+    <a href="{{route ('principal.getContacto')}}">Hola</a>
     <h1>Hola Mundo desde Laravel</h1>
     <p>Mi primera pagina con Laravel</p>
    
@@ -27,6 +27,5 @@
         @endforeach
     </ul>
 
-    <a href="/contacto">Contacto</a>
    </body>
    </html>
