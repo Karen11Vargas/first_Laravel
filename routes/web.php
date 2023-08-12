@@ -15,8 +15,24 @@ use App\Http\Controllers\MyFirstController;
 
 Route::view('/', 'welcome');
 
-//Se ha declado una ruta, se ira al controlador y la funcion exacta
-Route::get('/example', [MyFirstController::class, 'index']);
+
+Route::get('/contacto', [MyFirstController::class, 'contactPage']);
+// Route::post('/contacto', [MyFirstController::class, 'processContact']);
+
+Route::get('/contacto-example',function(){
+    echo "Hellp here";
+})->name("getContacto");
+
+Route::put('/contacto', [MyFirstController::class, 'processContactPut']);
+
+// Route::delete('/example', [MyFirstController::class, 'index']);
+// Route::patch('/example', [MyFirstController::class, 'index']);
+// Route::any('/example', [MyFirstController::class, 'index']);
+// Route::match(['GET', 'POST'], '/example', [MyFirstController::class, 'index']);
+// Route::head('/example', [MyFirstController::class, 'index']);
+// Route::options('/example', [MyFirstController::class, 'index']);
+// Route::redirect('/route1','/route2');
+// Route::redirectPermanet('/route1','/route2');
 
 // Route::get('/{cadena}', function ($cadena) {
 

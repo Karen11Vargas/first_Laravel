@@ -9,11 +9,18 @@ use Illuminate\Http\JsonResponse;
 
 class MyFirstController extends Controller
 {
-    //Este controlador responde con un mensaje
-    public function index(Request $request){
+    public function contactPage(){
+        return view('contacto');
+    }
 
-        print_r( $request->header());
-        // return new Response("Hello Word");
-        return new JsonResponse("Hello");
+  
+
+    public function processContact(Request $request){
+        echo "Formulario realizado";
+        die();
+    }
+
+    public function processContactPut(Request $request){
+        return new Response("Hello");
     }
 }
