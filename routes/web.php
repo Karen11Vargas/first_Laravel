@@ -15,9 +15,8 @@ use App\Http\Controllers\MyFirstController;
 
 Route::view('/', 'welcome');
 
-
-
-//Agrupar rutas
+//Rutas que solo funcionarian en ese dominio
+Route::domain('example.com')->group(function(){
 Route::prefix('/post')->name('principal.')->group(function(){
 
     Route::get('/contacto-example',function(){
@@ -29,6 +28,10 @@ Route::prefix('/post')->name('principal.')->group(function(){
     });
     
 });
+
+});
+
+//Agrupar rutas
 
 
 
