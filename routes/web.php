@@ -15,23 +15,8 @@ use App\Http\Controllers\MyFirstController;
 
 Route::view('/', 'welcome');
 
-//Rutas que solo funcionarian en ese dominio
-Route::domain('example.com')->group(function(){
-Route::prefix('/post')->name('principal.')->group(function(){
+Route::get('/login', function(){
+    echo "Url de login";
+})->name('login');
 
-    Route::get('/contacto-example',function(){
-        echo "Hellp here";
-    })->name("getContacto");
-
-    Route::get('/contacto', function(){
-        echo "Hola desde aqui";
-    });
-    
-});
-
-});
-
-//Agrupar rutas
-
-
-
+Route::middleware('firstMiddleware::all')->get('/middle',[MyFirstController::class,'middlewareFunction']);
