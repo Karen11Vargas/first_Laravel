@@ -14,9 +14,3 @@ use App\Http\Controllers\MyFirstController;
 */
 
 Route::view('/', 'welcome');
-
-Route::get('/login', function(){
-    echo "Url de login";
-})->name('login');
-
-Route::middleware('firstMiddleware::all')->get('/middle',[MyFirstController::class,'middlewareFunction']);
