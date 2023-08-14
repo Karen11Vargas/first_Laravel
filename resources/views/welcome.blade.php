@@ -53,7 +53,10 @@
                 $totalImp = 0;
                 $totalDesc = 0;
                 $totalFinal = 0;
-                foreach ($concepts as $c) {
+            @endphp
+
+            @foreach ($concepts as $c) 
+                @php
                     $imp = $c['precio'] * ($c['taxes'] /100);
                     $desc = $c['precio'] * ($c['descuento'] /100);
                     $total = $c['precio'] + $imp - $desc;
@@ -62,29 +65,28 @@
                     $totalImp += $imp;
                     $totalDesc += $desc;
                     $totalFinal += $total;
+                @endphp
+        
+                <tr>
+                    <th>{{$c['concepto']}}</th>
+                    <th>{{$c['precio']}}</th>
+                    <th>{{$c['pais']}}</th>
+                    <th>{{$c['taxes']}}</th>
+                    <th>{{$imp}}</th>
+                    <th>{{$c['descuento']}}</th>
+                    <th>{{$desc}}</th>
+                    <th>{{$total}}</th>
+                </tr>
+            @endforeach
 
-                    echo "<tr>";
-                        echo "<td>".$c['concepto']."</td>";
-                        echo "<td>".$c['precio']."</td>";
-                        echo "<td>".$c['pais']."</td>";
-                        echo "<td>".$c['taxes']."</td>";
-                        echo "<td>".$imp."</td>";
-                        echo "<td>".$c['descuento']."</td>";
-                        echo "<td>".$desc."</td>";
-                        echo "<td>".$total."</td>";        
-                    echo "</tr>";
-                    }
-
-                    echo "<tr>";
-                        echo "<td colspan=\"4\"></td>";
-                        echo "<td>".$totalPrecio."</td>";
-                        echo "<td>".$totalImp."</td>";
-                        echo "<td>".$totalDesc."</td>";
-                        echo "<td>".$totalFinal."</td>";
-                            
-                    echo "</tr>";
-                
-            @endphp
+                <tr>
+                    <td colspan="4"></td>
+                    <td>{{$totalPrecio}}</td>
+                    <td>{{$totalImp}}</td>
+                    <td>{{$totalDesc}}</td>
+                    <td>{{$totalFinal}}</td>
+                </tr>
+  
         </tbody>
     </table>
    </body>
