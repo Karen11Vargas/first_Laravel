@@ -1,29 +1,4 @@
-   
-    @php
-    $concepts = [
-        [
-            'concepto' =>'Curso Laravel 9',
-            'precio' => 20,
-            'pais' => 'COL',
-            'taxes' => 10,
-            'descuento' => 0
-        ],
-        [
-            'concepto' =>'Curso Python',
-            'precio' => 10,
-            'pais' => 'COL',
-            'taxes' => 13,
-            'descuento' => 12
-        ],
-        [
-            'concepto' =>'Curso Programacion',
-            'precio' => 50,
-            'pais' => 'COL',
-            'taxes' => 14,
-            'descuento' => 0
-        ]
-    ];
-    @endphp
+
    <!DOCTYPE html>
    <html lang="en">
    <head>
@@ -34,6 +9,7 @@
     <title> {{env('APP_NAME')}}</title>
    </head>
    <body>
+    <h3>{{$date}}</h3>
     <table border="2">
         <thead>
             <tr>

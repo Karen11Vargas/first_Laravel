@@ -13,4 +13,6 @@ use App\Http\Controllers\MyFirstController;
 |
 */
 
-Route::view('/', 'welcome');
+Route::view('/', 'contacto');
+
+Route::get('/welcome', [MyFirstController::class, 'index']);
