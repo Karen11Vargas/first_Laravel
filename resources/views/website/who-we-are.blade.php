@@ -9,8 +9,8 @@
 <body>
     <header>
         <nav>
-            <a @if($section == 'who') style="color: rgb(41, 138, 44)"  @endif href="{{route('website.who')}}">Quien soy</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="{{route('website.contact')}}">Contacto</a>
+            <a @if($section == 'who-we-are') style="color: rgb(41, 138, 44)"  @endif href="{{route('website.section',['section' => 'who-we-are'])}}">Quien soy</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a @if ($section == 'contact') style="color: green;" @endif href="{{route('website.section',['section' => 'contact'])}}">Contacto</a>
         </nav>
     </header>
 

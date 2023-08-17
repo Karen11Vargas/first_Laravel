@@ -9,8 +9,8 @@
 <body>
     <header>
         <nav>
-            <a href="{{route('website.who')}}">Quien soy</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="{{route('website.contact')}}">Contacto</a>
+            <a  href="{{route('website.section',['section' => 'who-we-are'])}}">Quien soy</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a  href="{{route('website.section',['section' => 'contact'])}}">Contacto</a>
         </nav>
     </header>
 

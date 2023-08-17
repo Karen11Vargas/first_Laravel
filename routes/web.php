@@ -15,12 +15,10 @@ use App\Http\Controllers\WebSiteController;
 */
 
 Route::name('website.')->prefix('/website')->group(function(){
-    
-    Route::get('home', [WebSiteController::class, 'home'])->name('home');
-    Route::get('who-we-are', [WebSiteController::class, 'who'])->name('who');
+    Route::get('{section}', [WebSiteController::class, 'section'])->name('section');
     Route::get('usuario', [WebSiteController::class, 'usuario'])->name('usuario');
     Route::get('contact', [WebSiteController::class, 'contact'])->name('contact');
-    Route::post('contact', [WebSiteController::class, 'sendContact'])->name('send-contact');
+    Route::post('contact', [WebSiteController::class, 'sendContact']);
 
 });
 Route::view('/', 'contacto');
