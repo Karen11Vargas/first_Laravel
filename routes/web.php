@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MyFirstController;
+use App\Http\Controllers\WebSiteController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,15 @@ use App\Http\Controllers\MyFirstController;
 |
 */
 
+Route::name('website.')->prefix('/website')->group(function(){
+    
+    Route::get('home', [WebSiteController::class, 'home'])->name('home');
+    Route::get('who-we-are', [WebSiteController::class, 'who'])->name('who');
+    Route::get('usuario', [WebSiteController::class, 'usuario'])->name('usuario');
+    Route::get('contact', [WebSiteController::class, 'contact'])->name('contact');
+    Route::post('contact', [WebSiteController::class, 'sendContact'])->name('send-contact');
+
+});
 Route::view('/', 'contacto');
 
 Route::get('/welcome', [MyFirstController::class, 'index']);
