@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MyFirstController;
 use App\Http\Controllers\WebSiteController;
+use App\Http\Controllers\ResourceController;
+use App\Http\Controllers\SecondController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,6 +18,9 @@ use App\Http\Controllers\WebSiteController;
 |
 */
 
+//Invocar un controlador tipo reosurce 
+Route::resource('/welcome',ResourceController::class)->except(['index', 'create']);
+
 Route::name('website.')->prefix('/website')->group(function(){
     Route::get('{section}', [WebSiteController::class, 'section'])->name('section');
     Route::get('usuario', [WebSiteController::class, 'usuario'])->name('usuario');
@@ -21,6 +28,6 @@ Route::name('website.')->prefix('/website')->group(function(){
     Route::post('contact', [WebSiteController::class, 'sendContact']);
 
 });
-Route::view('/', 'contacto');
+Route::get('/',[SecondController::class, 'index']);
 
 Route::get('/welcome', [MyFirstController::class, 'index']);
