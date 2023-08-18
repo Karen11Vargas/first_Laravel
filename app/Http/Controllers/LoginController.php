@@ -24,7 +24,8 @@ class LoginController extends Controller
     }
 
     public function logout(){
-
+        Session::forget('user');
+        return redirect()->route('home');
     }
 
     public function _checkCredentials($input){
